@@ -53,6 +53,17 @@ public class Main {
                 .forEach(System.out::println);
 */
 
+/*
+//      list of titles of ninja
+
+        repo.stream().map(Ninja::getAbilities)
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .map(Abilities::getTitle)
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .forEach(System.out::println);
+*/
 
     }
 }
