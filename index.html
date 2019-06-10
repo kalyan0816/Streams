@@ -16,14 +16,14 @@
       var genders = ["male","female"];
       var countries = ["India","Japan","China"];
 
-
       var getRandomValue = function(list){
         var size = list.length;
         var index = Math.floor(Math.random()*size);
         return list[index];
       }
-
+      
       var login = function() {
+        
           var x = prompt("Enter the userID");
           webengage.user.login(x);
 
