@@ -10,19 +10,39 @@
   </head>
   <body>
     <script>
-      var logged_in = false;
+
+      var firstNames = ["Naruto","Sakura","Itachi","Sasuke","Kakashi"];
+      var lastNames = ["Uzumaki","Haruno","Uchiha","Hatake"];
+      var genders = ["male","female"];
+      var countries = ["India","Japan","China"];
+
+
+      var getRandomValue = function(list){
+        var size = list.length;
+        var index = Math.floor(Math.random()*size);
+        return list[size];
+      }
+
       var login = function() {
           var x = prompt("Enter the userID");
           webengage.user.login(x);
-          webengage.user.setAttribute('we_email', 'kalyan.cherukuru@webklipper.com');
+
+          var firstName = getRandomValue(firstNames);
+          var lastName = getRandomValue(lastNames);
+          var gender = getRandomValue(genders);
+          var country = getRandomValue(countries);
+          var email  = firstName+"."+lastName+"@webklipper.com"
+
+          webengage.user.setAttribute('we_email', email);
           webengage.user.setAttribute('we_birth_date', '1997-11-16');
-          webengage.user.setAttribute('we_first_name','Kalyan');
-          webengage.user.setAttribute('we_last_name','Cherukuru');
-          webengage.user.setAttribute('we_gender','male');
-          webengage.user.setAttribute('country','India');
-          webengage.user.setAttribute('we_phone','+918790046569');
+          webengage.user.setAttribute('we_first_name',firstName);
+          webengage.user.setAttribute('we_last_name',lastName);
+          webengage.user.setAttribute('we_gender',gender);
+          webengage.user.setAttribute('country',country);
+
           console.log(x);
       };
+
     </script>
     <button onclick="login()">Log in</button>
   </body>
