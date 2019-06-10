@@ -40,14 +40,13 @@
           webengage.user.setAttribute('we_gender',gender);
           webengage.user.setAttribute('country',country);
           
-          webengage.user.track("user_logged_in",{
+          webengage.track("user_logged_in",{
                 "eventName":"user_logged_in"
           });
-        
       };
       
       var logout = function(){
-        webengage.user.track("user_logged_out",{
+        webengage.track("user_logged_out",{
                 "eventName":"user_logged_out"
           });
           webengage.user.logout();
