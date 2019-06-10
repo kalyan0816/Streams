@@ -39,11 +39,18 @@
           webengage.user.setAttribute('we_last_name',lastName);
           webengage.user.setAttribute('we_gender',gender);
           webengage.user.setAttribute('country',country);
-          console.log(x);
+          
+          webengage.user.track("user_logged_in",{
+                "eventName":"user_logged_in"
+          });
+        
       };
       
       var logout = function(){
-        webengage.user.logout();
+        webengage.user.track("user_logged_out",{
+                "eventName":"user_logged_out"
+          });
+          webengage.user.logout();
       };
       
     </script>
