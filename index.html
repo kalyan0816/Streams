@@ -5,21 +5,25 @@
     <title>Wet stone</title>
     <script id='_webengage_script_tag' type='text/javascript'>
       var webengage; !function(w,e,b,n,g){function o(e,t){e[t[t.length-1]]=function(){r.__queue.push([t.join("."),arguments])}}var i,s,r=w[b],z=" ",l="init options track screen onReady".split(z),a="feedback survey notification".split(z),c="options render clear abort".split(z),p="Open Close Submit Complete View Click".split(z),u="identify login logout setAttribute".split(z);if(!r||!r.__v){for(w[b]=r={__queue:[],__v:"6.0",user:{}},i=0;i<l.length;i++)o(r,[l[i]]);for(i=0;i<a.length;i++){for(r[a[i]]={},s=0;s<c.length;s++)o(r[a[i]],[a[i],c[s]]);for(s=0;s<p.length;s++)o(r[a[i]],[a[i],"on"+p[s]])}for(i=0;i<u.length;i++)o(r.user,["user",u[i]]);setTimeout(function(){var f=e.createElement("script"),d=e.getElementById("_webengage_script_tag");f.type="text/javascript",f.async=!0,f.src=("https:"==e.location.protocol?"https://ssl.widgets.webengage.com":"http://cdn.widgets.webengage.com")+"/js/webengage-min-v-6.0.js",d.parentNode.insertBefore(f,d)})}}(window,document,"webengage");
-      console.log("site is working");                              
       webengage.init('11b5650a7');
     </script>
   </head>
   <body>
     <script>
-      alert("Change 3");
-      webengage.user.login('ea526234df6d88b636caa671ceb27014');
-      webengage.user.setAttribute('we_email', 'kalyan.cherukuru@webklipper.com');
-      webengage.user.setAttribute('we_birth_date', '1997-11-16');
-      webengage.user.setAttribute('we_first_name','Kalyan');
-      webengage.user.setAttribute('we_last_name','Cherukuru');
-      webengage.user.setAttribute('we_gender','male');
-      webengage.user.setAttribute('country','India');
-      webengage.user.setAttribute('we_phone','+918790046569');
+      var logged_in = false;
+      var login = function() {
+          var x = prompt("Enter the userID");
+          webengage.user.login(x);
+          webengage.user.setAttribute('we_email', 'kalyan.cherukuru@webklipper.com');
+          webengage.user.setAttribute('we_birth_date', '1997-11-16');
+          webengage.user.setAttribute('we_first_name','Kalyan');
+          webengage.user.setAttribute('we_last_name','Cherukuru');
+          webengage.user.setAttribute('we_gender','male');
+          webengage.user.setAttribute('country','India');
+          webengage.user.setAttribute('we_phone','+918790046569');
+          console.log(x);
+      };
     </script>
+    <button onclick="login()">Log in</button>
   </body>
 </html>
