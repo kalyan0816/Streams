@@ -41,8 +41,15 @@
           webengage.user.setAttribute('country',country);
           console.log(x);
       };
+      
+      var logout = function(){
+        webengage.user.logout();
+      };
+      
     </script>
     <h1>Hello There!</h1>
     <button onclick="login()">Log in</button>
+    <button onclick="logout()">Log out</button>
+    
   </body>
 </html>
