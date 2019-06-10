@@ -20,7 +20,7 @@
       var getRandomValue = function(list){
         var size = list.length;
         var index = Math.floor(Math.random()*size);
-        return list[size];
+        return list[index];
       }
 
       var login = function() {
@@ -39,7 +39,6 @@
           webengage.user.setAttribute('we_last_name',lastName);
           webengage.user.setAttribute('we_gender',gender);
           webengage.user.setAttribute('country',country);
-
           console.log(x);
       };
 
