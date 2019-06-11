@@ -3,10 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Wet stone</title>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
     <script id='_webengage_script_tag' type='text/javascript'>
       var webengage; !function(w,e,b,n,g){function o(e,t){e[t[t.length-1]]=function(){r.__queue.push([t.join("."),arguments])}}var i,s,r=w[b],z=" ",l="init options track screen onReady".split(z),a="feedback survey notification".split(z),c="options render clear abort".split(z),p="Open Close Submit Complete View Click".split(z),u="identify login logout setAttribute".split(z);if(!r||!r.__v){for(w[b]=r={__queue:[],__v:"6.0",user:{}},i=0;i<l.length;i++)o(r,[l[i]]);for(i=0;i<a.length;i++){for(r[a[i]]={},s=0;s<c.length;s++)o(r[a[i]],[a[i],c[s]]);for(s=0;s<p.length;s++)o(r[a[i]],[a[i],"on"+p[s]])}for(i=0;i<u.length;i++)o(r.user,["user",u[i]]);setTimeout(function(){var f=e.createElement("script"),d=e.getElementById("_webengage_script_tag");f.type="text/javascript",f.async=!0,f.src=("https:"==e.location.protocol?"https://ssl.widgets.webengage.com":"http://cdn.widgets.webengage.com")+"/js/webengage-min-v-6.0.js",d.parentNode.insertBefore(f,d)})}}(window,document,"webengage");
       webengage.init('11b5650a7');
     </script>
+
+    <style>
+      body {
+        background-image: url(http://as.clickwallpapers.com/1080p/naruto-wallpapers-phone-On-Wallpaper-1080p-HD.jpg);
+      }
+    </style>
   </head>
   <body>
     <script>
@@ -21,12 +28,12 @@
         var index = Math.floor(Math.random()*size);
         return list[index];
       }
-      
+
       var login = function() {
-        
+
           var x = prompt("Enter the user_id");
           webengage.user.login(x);
-        
+
           var firstName = getRandomValue(firstNames);
           var lastName = getRandomValue(lastNames);
           var gender = getRandomValue(genders);
@@ -38,33 +45,32 @@
           webengage.user.setAttribute('we_first_name',firstName);
           webengage.user.setAttribute('we_last_name',lastName);
           webengage.user.setAttribute('we_gender',gender);
-          webengage.user.setAttribute('country',country);      
+          webengage.user.setAttribute('country',country);
       };
-      
-      var logout = function(){      
+
+      var logout = function(){
           webengage.user.logout();
       };
-      
+
       var event1 = function() {
           webengage.track("user_event_1",{
                "message" : "event 1",
                "eventCode" : 1
           });
       };
-      
+
       var event2 = function() {
           webengage.track("user_event_2",{
                "message" : "event 2",
                "eventCode" : 2
           });
       };
-      
+
     </script>
-    <h1>Hello There!</h1>
     <button onclick="login()">Log in</button>
     <button onclick="logout()">Log out</button>
     <button onclick="event1()">Event 1</button>
     <button onclick="event2()">Event 2</button>
-    
+
   </body>
 </html>
