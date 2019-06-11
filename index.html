@@ -56,16 +56,16 @@
           webengage.user.logout();
       };
 
-      var event1 = function() {
-          webengage.track("user_event_1",{
-               "message" : "event 1",
+      var ramenEating = function() {
+          webengage.track("ramen_eating",{
+               "message" : "It's ramen eating time",
                "eventCode" : 1
           });
       };
 
-      var event2 = function() {
-          webengage.track("user_event_2",{
-               "message" : "event 2",
+      var practice = function() {
+          webengage.track("practice",{
+               "message" : "It's practice time",
                "eventCode" : 2
           });
       };
@@ -74,8 +74,8 @@
     
     <button onclick="login()">Log in</button>
     <button onclick="logout()">Log out</button>
-    <button onclick="event1()">Event 1</button>
-    <button onclick="event2()">Event 2</button>
+    <button onclick="ramenEating()">Event 1</button>
+    <button onclick="practice()">Event 2</button>
 
   </body>
 </html>
