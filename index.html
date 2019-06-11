@@ -24,9 +24,9 @@
       
       var login = function() {
         
-          var x = prompt("Enter the userID");
+          var x = prompt("Enter the user_id");
           webengage.user.login(x);
-
+        
           var firstName = getRandomValue(firstNames);
           var lastName = getRandomValue(lastNames);
           var gender = getRandomValue(genders);
@@ -38,24 +38,33 @@
           webengage.user.setAttribute('we_first_name',firstName);
           webengage.user.setAttribute('we_last_name',lastName);
           webengage.user.setAttribute('we_gender',gender);
-          webengage.user.setAttribute('country',country);
-          
-          webengage.track("user_logged_in",{
-                "eventName":"user_logged_in"
+          webengage.user.setAttribute('country',country);      
+      };
+      
+      var logout = function(){      
+          webengage.user.logout();
+      };
+      
+      var event1 = function() {
+          webengage.track("user_event_1",{
+               "message" : "This is a user defined event",
+               "eventCode" : 1
           });
       };
       
-      var logout = function(){
-        webengage.track("user_logged_out",{
-                "eventName":"user_logged_out"
+      var event2 = function() {
+          webengage.track("user_event_2",{
+               "message" : "This is a user defined event",
+               "eventCode" : 2
           });
-          webengage.user.logout();
       };
       
     </script>
     <h1>Hello There!</h1>
     <button onclick="login()">Log in</button>
     <button onclick="logout()">Log out</button>
+    <button onclick="event1()">Event 1</button>
+    <button onclick="event2()">Event 2</button>
     
   </body>
 </html>
