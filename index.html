@@ -33,10 +33,10 @@
       }
 
       var login = function() {
-
+          webengage.user.logout();
           var x = prompt("Enter the user_id");
           webengage.user.login(x);
-
+          /*
           var firstName = getRandomValue(firstNames);
           var lastName = getRandomValue(lastNames);
           var gender = getRandomValue(genders);
@@ -49,6 +49,7 @@
           webengage.user.setAttribute('we_last_name',lastName);
           webengage.user.setAttribute('we_gender',gender);
           webengage.user.setAttribute('country',country);
+          */
       };
 
       var logout = function(){
